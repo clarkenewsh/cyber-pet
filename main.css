@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: teal;
+    max-width: 80vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 0 auto;
+}
+
+main {
+    background-color: thistle;
+    text-align: center;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-top-left-radius: 60%;
+    border-top-right-radius: 60%;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    border: 30px solid purple;
+    row-gap: 40px;
+
+}
+
+
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 38px;
+}
+
+button {
+    padding: 15px;
+    color: white;
+    background-color: teal;
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+#screen {
+    background: lightgrey;
+    padding: 50px;
+    border-radius: 4%;
+    width: 100%;
+}
+
+img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
