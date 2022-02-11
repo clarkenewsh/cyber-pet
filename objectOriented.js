@@ -14,11 +14,11 @@ const petMsg = document.querySelector('.petMsg');
 class CyberPet {
     constructor(name){
         this._name = name;
-        this._hunger = 100;
-        this._thirst = 100;
+        this._hunger = 50;
+        this._thirst = 50;
         this._isHappy = 50;
         this._isSleepy = 50;
-        this._isBored = false;
+        this._isBored = 50;
     }
 
     get name(){
@@ -54,7 +54,7 @@ class CyberPet {
             petMsg.textContent = `${this._name} doesn't want any more food!`;
             return;
         } else {
-            console.log(`Mmmmmm yummy! Hunger is now ${this._hunger}`) ;
+            // console.log(`Mmmmmm yummy! Hunger is now ${this._hunger}`) ;
             petMsg.textContent = `Mmmmmm yummy! Hunger is now ${this._hunger}` ;
         }
     }
@@ -80,13 +80,15 @@ class CyberPet {
     play() {
         this._isHappy += 10;
         this._isBored -= 10;
-        // if(this._isHappy <= 10 || this._isBored <= 10) {
-        //     // console.log(`${this._name} needs playtime`);
-        // } else if (this._isBored )
-        
-        // else {
-        //     console.log(`Yaayyyy, play time! Happiness level is now ${this._isHappy}`);
-        // }
+        this._thirst += 10;
+        if(this._isBored >= 90) {
+            petMsg.textContent = `${this._name} needs playtime`;
+        } else if (this._isBored <= 0) {
+            petMsg.textContent = `Im happpyyyy!! ${this._name}. I dont want to play anymore`;
+            return;
+        }else {
+            petMsg.textContent = `Yaayyyy, play time! Happiness level is now ${this._isHappy} & ${this._isBored} bored`;
+        }
     }
 
     sleep() {
@@ -94,6 +96,7 @@ class CyberPet {
         console.log(`zzzzzzzzzzz... sleep level is ${this._isSleepy}`);
     }
 }
+
 // Create new pet
 const pet1 = new CyberPet("Pet 1");
 
@@ -167,13 +170,12 @@ console.log(newDragon);
 
 // Cyber Pet Button Listeners
 btnPlay.addEventListener('click', () => {
-    console.log('clicked');
+    newDog.play()
 })
 
 btnFeed.addEventListener('click', () => {
     // console.log('clicked');
     newDog.eat();
-
 })
 
 btnDrink.addEventListener('click', () => {
@@ -181,9 +183,9 @@ btnDrink.addEventListener('click', () => {
     newDog.drink();
 })
 
-btnWalk.addEventListener('click', () => {
-    console.log('clicked');
-})
+// btnWalk.addEventListener('click', () => {
+//     console.log('clicked');
+// })
 
 
 
